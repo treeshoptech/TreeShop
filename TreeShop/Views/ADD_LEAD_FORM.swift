@@ -1,9 +1,11 @@
 import SwiftUI
+import SwiftData
 import MapKit
 
 struct ADD_LEAD_FORM: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Query private var allCustomers: [CUSTOMER]
     @State private var workflowManager = WORKFLOW_MANAGER()
 
     // Customer Info
@@ -257,10 +259,25 @@ struct ADD_LEAD_FORM: View {
         lead.propertyType = propertyType
         lead.preferredContactMethod = preferredContact.rawValue
 
-        // Save lead
-        workflowManager.createLead(lead)
+        // Check if customer already exists by phone
+        if let existingCustomer = allCustomers.first(where: { $0.phoneNumber == customerPhone }) {
+            lead.customerID = existingCustomer.id
+            lead.isExistingCustomer = true
+            lead.isRepeatCustomer = existingCustomer.isRepeatCustomer
 
-        dismiss()
+            // Add lead to customer's records
+            existingCustomer.linkedLeadIDs.append(lead.id.uuidString)
+        }
+
+        // Insert lead into context
+        modelContext.insert(lead)
+
+        do {
+            try modelContext.save()
+            dismiss()
+        } catch {
+            print("Error saving lead: \(error)")
+        }
     }
 }
 

@@ -584,8 +584,19 @@ struct ADDRESS_INPUT_FIELD: View {
     private func selectAddress(_ mapItem: MKMapItem) {
         let placemark = mapItem.placemark
 
-        // Extract address components
-        address = placemark.thoroughfare ?? ""
+        // Extract address components - combine street number + street name
+        var fullAddress = ""
+        if let streetNumber = placemark.subThoroughfare {
+            fullAddress = streetNumber
+        }
+        if let streetName = placemark.thoroughfare {
+            if !fullAddress.isEmpty {
+                fullAddress += " "
+            }
+            fullAddress += streetName
+        }
+
+        address = fullAddress
         city = placemark.locality ?? ""
         state = placemark.administrativeArea ?? ""
         zipCode = placemark.postalCode ?? ""
