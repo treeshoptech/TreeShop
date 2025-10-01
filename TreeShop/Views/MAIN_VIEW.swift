@@ -13,6 +13,11 @@ struct MAIN_VIEW: View {
     @State private var showingCustomers = false
     @State private var showingProperties = false
     @State private var showingTrees = false
+    @State private var showingEquipment = false
+    @State private var showingCalendar = false
+    @State private var showingTimeTracker = false
+    @State private var showingReports = false
+    @State private var showingSettings = false
 
     var body: some View {
         ZStack {
@@ -66,7 +71,12 @@ struct MAIN_VIEW: View {
                 showingCompany: $showingCompany,
                 showingCustomers: $showingCustomers,
                 showingProperties: $showingProperties,
-                showingTrees: $showingTrees
+                showingTrees: $showingTrees,
+                showingEquipment: $showingEquipment,
+                showingCalendar: $showingCalendar,
+                showingTimeTracker: $showingTimeTracker,
+                showingReports: $showingReports,
+                showingSettings: $showingSettings
             )
 
             // Address search overlay
@@ -92,6 +102,21 @@ struct MAIN_VIEW: View {
         .sheet(isPresented: $showingTrees) {
             TREES_VIEW()
         }
+        .sheet(isPresented: $showingEquipment) {
+            EQUIPMENT_VIEW()
+        }
+        .sheet(isPresented: $showingCalendar) {
+            CALENDAR_VIEW()
+        }
+        .sheet(isPresented: $showingTimeTracker) {
+            TIME_TRACKER_VIEW()
+        }
+        .sheet(isPresented: $showingReports) {
+            REPORTS_VIEW()
+        }
+        .sheet(isPresented: $showingSettings) {
+            SETTINGS_VIEW()
+        }
         .onAppear {
             workflowManager.setContext(modelContext)
         }
@@ -111,6 +136,21 @@ struct MAIN_VIEW: View {
             if newValue { isMenuOpen = false }
         }
         .onChange(of: showingTrees) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingEquipment) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingCalendar) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingTimeTracker) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingReports) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingSettings) { _, newValue in
             if newValue { isMenuOpen = false }
         }
         .preferredColorScheme(.dark)

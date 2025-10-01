@@ -43,6 +43,14 @@
 		CP010CUSTOMERSVIEW010CP010CU /* CUSTOMERS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP010CUSTOMERSVIEWREF010 /* CUSTOMERS_VIEW.swift */; };
 		CP011PROPERTIESVIEW011CP011P /* PROPERTIES_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP011PROPERTIESVIEWREF01 /* PROPERTIES_VIEW.swift */; };
 		CP012TREESVIEW012CP012TREES0 /* TREES_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP012TREESVIEWREF012CP01 /* TREES_VIEW.swift */; };
+		EQ001EQUIPMENT001EQ001EQUIPM /* EQUIPMENT.swift in Sources */ = {isa = PBXBuildFile; fileRef = EQ001EQUIPMENTREF001EQ001 /* EQUIPMENT.swift */; };
+		EQ002EQUIPMENTVIEW002EQ002EQ /* EQUIPMENT_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = EQ002EQUIPMENTVIEWREF002 /* EQUIPMENT_VIEW.swift */; };
+		CT001SCHEDULEDJOB001CT001SC0 /* SCHEDULED_JOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CT001SCHEDULEDJOBREF001CT /* SCHEDULED_JOB.swift */; };
+		CT002TIMEENTRY002CT002TIMEEN /* TIME_ENTRY.swift in Sources */ = {isa = PBXBuildFile; fileRef = CT002TIMEENTRYREF002CT002 /* TIME_ENTRY.swift */; };
+		CT003CALENDAR003CT003CALENDA /* CALENDAR_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CT003CALENDARREF003CT003C /* CALENDAR_VIEW.swift */; };
+		CT004TIMETRACKER004CT004TIME /* TIME_TRACKER_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CT004TIMETRACKERREF004CT /* TIME_TRACKER_VIEW.swift */; };
+		ST001REPORTSVIEW001ST001REP0 /* REPORTS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = ST001REPORTSVIEWREF001ST0 /* REPORTS_VIEW.swift */; };
+		ST002SETTINGSVIEW002ST002SET /* SETTINGS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = ST002SETTINGSVIEWREF002ST /* SETTINGS_VIEW.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +91,14 @@
 		CP010CUSTOMERSVIEWREF010 /* CUSTOMERS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUSTOMERS_VIEW.swift; sourceTree = "<group>"; };
 		CP011PROPERTIESVIEWREF01 /* PROPERTIES_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROPERTIES_VIEW.swift; sourceTree = "<group>"; };
 		CP012TREESVIEWREF012CP01 /* TREES_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TREES_VIEW.swift; sourceTree = "<group>"; };
+		EQ001EQUIPMENTREF001EQ001 /* EQUIPMENT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQUIPMENT.swift; sourceTree = "<group>"; };
+		EQ002EQUIPMENTVIEWREF002 /* EQUIPMENT_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQUIPMENT_VIEW.swift; sourceTree = "<group>"; };
+		CT001SCHEDULEDJOBREF001CT /* SCHEDULED_JOB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCHEDULED_JOB.swift; sourceTree = "<group>"; };
+		CT002TIMEENTRYREF002CT002 /* TIME_ENTRY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIME_ENTRY.swift; sourceTree = "<group>"; };
+		CT003CALENDARREF003CT003C /* CALENDAR_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALENDAR_VIEW.swift; sourceTree = "<group>"; };
+		CT004TIMETRACKERREF004CT /* TIME_TRACKER_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIME_TRACKER_VIEW.swift; sourceTree = "<group>"; };
+		ST001REPORTSVIEWREF001ST0 /* REPORTS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REPORTS_VIEW.swift; sourceTree = "<group>"; };
+		ST002SETTINGSVIEWREF002ST /* SETTINGS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SETTINGS_VIEW.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +133,14 @@
 			children = (
 				WF006ADDLEADREF006WF006AD /* ADD_LEAD_FORM.swift */,
 				WF009ADDSEARCHREF009WF009A /* ADDRESS_SEARCH_VIEW.swift */,
+				CT003CALENDARREF003CT003C /* CALENDAR_VIEW.swift */,
 				CP004COMPANYSETTINGSREF004 /* COMPANY_SETTINGS_VIEW.swift */,
 				WF007COMPONENTSREF007WF007 /* COMPONENT_LIBRARY.swift */,
 				CP010CUSTOMERSVIEWREF010 /* CUSTOMERS_VIEW.swift */,
 				DDD724FB5A3E6CB46DDA4536 /* DrawingEditMenu.swift */,
 				BBB0EDEEBE9050240AAB7016 /* DrawingToolbar.swift */,
 				CP005EMPLOYEESREF005CP005 /* EMPLOYEES_VIEW.swift */,
+				EQ002EQUIPMENTVIEWREF002 /* EQUIPMENT_VIEW.swift */,
 				BBB1111111111111111111111 /* InteractiveMapView.swift */,
 				A6DC82A86CED4FA6A24CC79C /* LoginView.swift */,
 				WF008MAINVIEWREF008WF008M /* MAIN_VIEW.swift */,
@@ -131,7 +149,10 @@
 				BBB2222222222222222222222 /* MeasurementOverlay.swift */,
 				F489ED8DFE794B9FBC6E50FE /* ProfileView.swift */,
 				CP011PROPERTIESVIEWREF01 /* PROPERTIES_VIEW.swift */,
+				ST001REPORTSVIEWREF001ST0 /* REPORTS_VIEW.swift */,
+				ST002SETTINGSVIEWREF002ST /* SETTINGS_VIEW.swift */,
 				6CC09A8639AA4D0892767FFD /* SignUpView.swift */,
+				CT004TIMETRACKERREF004CT /* TIME_TRACKER_VIEW.swift */,
 				CP012TREESVIEWREF012CP01 /* TREES_VIEW.swift */,
 				CP006USERPROFILEREF006CP0 /* USER_PROFILE_VIEW.swift */,
 				WF004MAPPINREF004WF004MAP /* WORKFLOW_MAP_PIN.swift */,
@@ -161,8 +182,11 @@
 				CP007CUSTOMERREF007CP007C /* CUSTOMER.swift */,
 				CCC16070A42D8344C0EBD502 /* Drawing.swift */,
 				CP003EMPLOYEEREF003CP003E /* EMPLOYEE.swift */,
+				EQ001EQUIPMENTREF001EQ001 /* EQUIPMENT.swift */,
 				WF001LEADMODELREF001WF001L /* LEAD.swift */,
 				CP008PROPERTYREF008CP008P /* PROPERTY.swift */,
+				CT001SCHEDULEDJOBREF001CT /* SCHEDULED_JOB.swift */,
+				CT002TIMEENTRYREF002CT002 /* TIME_ENTRY.swift */,
 				CP009TREEREF009CP009TREE /* TREE.swift */,
 				71B1BAD2398A4808BC2F55E9 /* User.swift */,
 				CP002USERPROFILEREF002CP00 /* USER_PROFILE.swift */,
@@ -266,6 +290,7 @@
 			files = (
 				WF006ADDLEAD006WF006ADDLEAD /* ADD_LEAD_FORM.swift in Sources */,
 				WF009ADDSEARCH009WF009ADDSE /* ADDRESS_SEARCH_VIEW.swift in Sources */,
+				CT003CALENDAR003CT003CALENDA /* CALENDAR_VIEW.swift in Sources */,
 				CP001COMPANYMODEL001CP001CO /* COMPANY.swift in Sources */,
 				CP004COMPANYSETTINGS004CP004 /* COMPANY_SETTINGS_VIEW.swift in Sources */,
 				WF007COMPONENTS007WF007COMP /* COMPONENT_LIBRARY.swift in Sources */,
@@ -277,6 +302,8 @@
 				06364E7EEFED4D2F8758F54C /* DrawingViewModel.swift in Sources */,
 				CP003EMPLOYEE003CP003EMPLOY0 /* EMPLOYEE.swift in Sources */,
 				CP005EMPLOYEES005CP005EMPLOY /* EMPLOYEES_VIEW.swift in Sources */,
+				EQ001EQUIPMENT001EQ001EQUIPM /* EQUIPMENT.swift in Sources */,
+				EQ002EQUIPMENTVIEW002EQ002EQ /* EQUIPMENT_VIEW.swift in Sources */,
 				11111111111111INTERACTIVE11 /* InteractiveMapView.swift in Sources */,
 				WF001LEADMODEL001WF001LEAD /* LEAD.swift in Sources */,
 				4C77AA7257CC404BACD0C788 /* LoginView.swift in Sources */,
@@ -287,7 +314,12 @@
 				8D107A1AA78143F8894DC7CD /* ProfileView.swift in Sources */,
 				CP011PROPERTIESVIEW011CP011P /* PROPERTIES_VIEW.swift in Sources */,
 				CP008PROPERTY008CP008PROPER0 /* PROPERTY.swift in Sources */,
+				ST001REPORTSVIEW001ST001REP0 /* REPORTS_VIEW.swift in Sources */,
+				CT001SCHEDULEDJOB001CT001SC0 /* SCHEDULED_JOB.swift in Sources */,
+				ST002SETTINGSVIEW002ST002SET /* SETTINGS_VIEW.swift in Sources */,
 				01D52D01C9D04FC188433783 /* SignUpView.swift in Sources */,
+				CT002TIMEENTRY002CT002TIMEEN /* TIME_ENTRY.swift in Sources */,
+				CT004TIMETRACKER004CT004TIME /* TIME_TRACKER_VIEW.swift in Sources */,
 				CP009TREE009CP009TREE009CP00 /* TREE.swift in Sources */,
 				CP012TREESVIEW012CP012TREES0 /* TREES_VIEW.swift in Sources */,
 				BB527BA0C8924B09BA8FDB35 /* User.swift in Sources */,

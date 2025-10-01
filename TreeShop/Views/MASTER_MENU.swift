@@ -46,6 +46,8 @@ enum MENU_ACTION {
     case TREES
     case EMPLOYEES
     case EQUIPMENT
+    case CALENDAR
+    case TIME_TRACKER
     case REPORTS
     case SETTINGS
     case PROFILE
@@ -55,7 +57,6 @@ enum MENU_ACTION {
     case QUICK_MEASUREMENT
     case TREE_ASSESSMENT
     case SEARCH
-    case CALENDAR
     case NOTIFICATIONS
     case CUSTOM(String)
 }
@@ -70,6 +71,11 @@ struct MASTER_MENU: View {
     @Binding var showingCustomers: Bool
     @Binding var showingProperties: Bool
     @Binding var showingTrees: Bool
+    @Binding var showingEquipment: Bool
+    @Binding var showingCalendar: Bool
+    @Binding var showingTimeTracker: Bool
+    @Binding var showingReports: Bool
+    @Binding var showingSettings: Bool
 
     @State private var currentLevel: MENU_LEVEL = .LEVEL_1
     @State private var selectedItem: MENU_ITEM?
@@ -192,6 +198,16 @@ struct MASTER_MENU: View {
             showingProperties = true
         case .TREES:
             showingTrees = true
+        case .EQUIPMENT:
+            showingEquipment = true
+        case .CALENDAR:
+            showingCalendar = true
+        case .TIME_TRACKER:
+            showingTimeTracker = true
+        case .REPORTS:
+            showingReports = true
+        case .SETTINGS:
+            showingSettings = true
         default:
             print("Action not yet implemented: \(action)")
         }
@@ -277,6 +293,20 @@ struct MENU_LEVEL_1: View {
             title: "Equipment",
             icon: "wrench.and.screwdriver.fill",
             action: .EQUIPMENT,
+            subItems: []
+        ),
+        MENU_ITEM(
+            title: "Calendar",
+            icon: "calendar",
+            color: APP_THEME.INFO,
+            action: .CALENDAR,
+            subItems: []
+        ),
+        MENU_ITEM(
+            title: "Time Tracker",
+            icon: "clock.fill",
+            color: APP_THEME.WARNING,
+            action: .TIME_TRACKER,
             subItems: []
         ),
         MENU_ITEM(
