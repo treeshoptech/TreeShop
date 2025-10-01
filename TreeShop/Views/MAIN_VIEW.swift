@@ -18,6 +18,8 @@ struct MAIN_VIEW: View {
     @State private var showingTimeTracker = false
     @State private var showingReports = false
     @State private var showingSettings = false
+    @State private var showingLeads = false
+    @State private var showingAddLead = false
 
     var body: some View {
         ZStack {
@@ -76,7 +78,9 @@ struct MAIN_VIEW: View {
                 showingCalendar: $showingCalendar,
                 showingTimeTracker: $showingTimeTracker,
                 showingReports: $showingReports,
-                showingSettings: $showingSettings
+                showingSettings: $showingSettings,
+                showingLeads: $showingLeads,
+                showingAddLead: $showingAddLead
             )
 
             // Address search overlay
@@ -117,6 +121,12 @@ struct MAIN_VIEW: View {
         .sheet(isPresented: $showingSettings) {
             SETTINGS_VIEW()
         }
+        .sheet(isPresented: $showingLeads) {
+            LEADS_LIST_VIEW()
+        }
+        .sheet(isPresented: $showingAddLead) {
+            ADD_LEAD_FORM()
+        }
         .onAppear {
             workflowManager.setContext(modelContext)
         }
@@ -151,6 +161,12 @@ struct MAIN_VIEW: View {
             if newValue { isMenuOpen = false }
         }
         .onChange(of: showingSettings) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingLeads) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingAddLead) { _, newValue in
             if newValue { isMenuOpen = false }
         }
         .preferredColorScheme(.dark)

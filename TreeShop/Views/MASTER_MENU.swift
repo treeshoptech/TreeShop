@@ -38,6 +38,9 @@ struct MENU_ITEM: Identifiable {
 
 enum MENU_ACTION {
     case LEADS
+    case ACTIVE_LEADS
+    case OVERDUE_LEADS
+    case SITE_VISITS_NEEDED
     case PROPOSALS
     case WORK_ORDERS
     case INVOICES
@@ -76,6 +79,8 @@ struct MASTER_MENU: View {
     @Binding var showingTimeTracker: Bool
     @Binding var showingReports: Bool
     @Binding var showingSettings: Bool
+    @Binding var showingLeads: Bool
+    @Binding var showingAddLead: Bool
 
     @State private var currentLevel: MENU_LEVEL = .LEVEL_1
     @State private var selectedItem: MENU_ITEM?
@@ -186,6 +191,10 @@ struct MASTER_MENU: View {
 
     private func executeAction(_ action: MENU_ACTION) {
         switch action {
+        case .LEADS, .ACTIVE_LEADS, .OVERDUE_LEADS, .SITE_VISITS_NEEDED:
+            showingLeads = true
+        case .ADD_LEAD:
+            showingAddLead = true
         case .EMPLOYEES:
             showingEmployees = true
         case .PROFILE:
@@ -233,12 +242,11 @@ struct MENU_LEVEL_1: View {
             icon: "person.crop.circle.badge.plus",
             color: WORKFLOW_COLORS.LEAD,
             action: .LEADS,
-            badge: 12,
             subItems: [
-                MENU_ITEM(title: "Active Leads", icon: "circle.fill", action: .LEADS),
+                MENU_ITEM(title: "Active Leads", icon: "circle.fill", action: .ACTIVE_LEADS),
                 MENU_ITEM(title: "Add New Lead", icon: "plus.circle.fill", action: .ADD_LEAD),
-                MENU_ITEM(title: "Overdue Follow-ups", icon: "exclamationmark.triangle.fill", action: .LEADS),
-                MENU_ITEM(title: "Site Visits Needed", icon: "car.fill", action: .LEADS)
+                MENU_ITEM(title: "Overdue Follow-ups", icon: "exclamationmark.triangle.fill", action: .OVERDUE_LEADS),
+                MENU_ITEM(title: "Site Visits Needed", icon: "car.fill", action: .SITE_VISITS_NEEDED)
             ]
         ),
         MENU_ITEM(

@@ -192,10 +192,6 @@ struct WORKFLOW_MAP_VIEW: View {
             }
         }
         .mapStyle(.standard(elevation: .realistic))
-        .mapControls {
-            MapUserLocationButton()
-            MapCompass()
-        }
         .overlay(alignment: .bottom) {
             if let selected = selectedAnnotation {
                 WORKFLOW_PIN_CALLOUT(annotation: selected) {
