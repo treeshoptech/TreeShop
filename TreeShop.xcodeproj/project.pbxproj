@@ -31,6 +31,12 @@
 		WF007COMPONENTS007WF007COMP /* COMPONENT_LIBRARY.swift in Sources */ = {isa = PBXBuildFile; fileRef = WF007COMPONENTSREF007WF007 /* COMPONENT_LIBRARY.swift */; };
 		WF008MAINVIEW008WF008MAINV0 /* MAIN_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = WF008MAINVIEWREF008WF008M /* MAIN_VIEW.swift */; };
 		WF009ADDSEARCH009WF009ADDSE /* ADDRESS_SEARCH_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = WF009ADDSEARCHREF009WF009A /* ADDRESS_SEARCH_VIEW.swift */; };
+		CP001COMPANYMODEL001CP001CO /* COMPANY.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP001COMPANYMODELREF001CP00 /* COMPANY.swift */; };
+		CP002USERPROFILE002CP002USE /* USER_PROFILE.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP002USERPROFILEREF002CP00 /* USER_PROFILE.swift */; };
+		CP003EMPLOYEE003CP003EMPLOY0 /* EMPLOYEE.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP003EMPLOYEEREF003CP003E /* EMPLOYEE.swift */; };
+		CP004COMPANYSETTINGS004CP004 /* COMPANY_SETTINGS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP004COMPANYSETTINGSREF004 /* COMPANY_SETTINGS_VIEW.swift */; };
+		CP005EMPLOYEES005CP005EMPLOY /* EMPLOYEES_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP005EMPLOYEESREF005CP005 /* EMPLOYEES_VIEW.swift */; };
+		CP006USERPROFILE006CP006USE0 /* USER_PROFILE_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP006USERPROFILEREF006CP0 /* USER_PROFILE_VIEW.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +65,12 @@
 		WF007COMPONENTSREF007WF007 /* COMPONENT_LIBRARY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COMPONENT_LIBRARY.swift; sourceTree = "<group>"; };
 		WF008MAINVIEWREF008WF008M /* MAIN_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAIN_VIEW.swift; sourceTree = "<group>"; };
 		WF009ADDSEARCHREF009WF009A /* ADDRESS_SEARCH_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADDRESS_SEARCH_VIEW.swift; sourceTree = "<group>"; };
+		CP001COMPANYMODELREF001CP00 /* COMPANY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COMPANY.swift; sourceTree = "<group>"; };
+		CP002USERPROFILEREF002CP00 /* USER_PROFILE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USER_PROFILE.swift; sourceTree = "<group>"; };
+		CP003EMPLOYEEREF003CP003E /* EMPLOYEE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMPLOYEE.swift; sourceTree = "<group>"; };
+		CP004COMPANYSETTINGSREF004 /* COMPANY_SETTINGS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COMPANY_SETTINGS_VIEW.swift; sourceTree = "<group>"; };
+		CP005EMPLOYEESREF005CP005 /* EMPLOYEES_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMPLOYEES_VIEW.swift; sourceTree = "<group>"; };
+		CP006USERPROFILEREF006CP0 /* USER_PROFILE_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USER_PROFILE_VIEW.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +105,11 @@
 			children = (
 				WF006ADDLEADREF006WF006AD /* ADD_LEAD_FORM.swift */,
 				WF009ADDSEARCHREF009WF009A /* ADDRESS_SEARCH_VIEW.swift */,
+				CP004COMPANYSETTINGSREF004 /* COMPANY_SETTINGS_VIEW.swift */,
 				WF007COMPONENTSREF007WF007 /* COMPONENT_LIBRARY.swift */,
 				DDD724FB5A3E6CB46DDA4536 /* DrawingEditMenu.swift */,
 				BBB0EDEEBE9050240AAB7016 /* DrawingToolbar.swift */,
+				CP005EMPLOYEESREF005CP005 /* EMPLOYEES_VIEW.swift */,
 				BBB1111111111111111111111 /* InteractiveMapView.swift */,
 				A6DC82A86CED4FA6A24CC79C /* LoginView.swift */,
 				WF008MAINVIEWREF008WF008M /* MAIN_VIEW.swift */,
@@ -104,6 +118,7 @@
 				BBB2222222222222222222222 /* MeasurementOverlay.swift */,
 				F489ED8DFE794B9FBC6E50FE /* ProfileView.swift */,
 				6CC09A8639AA4D0892767FFD /* SignUpView.swift */,
+				CP006USERPROFILEREF006CP0 /* USER_PROFILE_VIEW.swift */,
 				WF004MAPPINREF004WF004MAP /* WORKFLOW_MAP_PIN.swift */,
 			);
 			path = Views;
@@ -127,9 +142,12 @@
 		BF05617F967A4EC383EB2C5A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CP001COMPANYMODELREF001CP00 /* COMPANY.swift */,
 				CCC16070A42D8344C0EBD502 /* Drawing.swift */,
+				CP003EMPLOYEEREF003CP003E /* EMPLOYEE.swift */,
 				WF001LEADMODELREF001WF001L /* LEAD.swift */,
 				71B1BAD2398A4808BC2F55E9 /* User.swift */,
+				CP002USERPROFILEREF002CP00 /* USER_PROFILE.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,11 +248,15 @@
 			files = (
 				WF006ADDLEAD006WF006ADDLEAD /* ADD_LEAD_FORM.swift in Sources */,
 				WF009ADDSEARCH009WF009ADDSE /* ADDRESS_SEARCH_VIEW.swift in Sources */,
+				CP001COMPANYMODEL001CP001CO /* COMPANY.swift in Sources */,
+				CP004COMPANYSETTINGS004CP004 /* COMPANY_SETTINGS_VIEW.swift in Sources */,
 				WF007COMPONENTS007WF007COMP /* COMPONENT_LIBRARY.swift in Sources */,
 				16070A42D8344C0EBD502CD4 /* Drawing.swift in Sources */,
 				724FB5A3E6CB46DDA45368E6 /* DrawingEditMenu.swift in Sources */,
 				0EDEEBE9050240AAB7016E61 /* DrawingToolbar.swift in Sources */,
 				06364E7EEFED4D2F8758F54C /* DrawingViewModel.swift in Sources */,
+				CP003EMPLOYEE003CP003EMPLOY0 /* EMPLOYEE.swift in Sources */,
+				CP005EMPLOYEES005CP005EMPLOY /* EMPLOYEES_VIEW.swift in Sources */,
 				11111111111111INTERACTIVE11 /* InteractiveMapView.swift in Sources */,
 				WF001LEADMODEL001WF001LEAD /* LEAD.swift in Sources */,
 				4C77AA7257CC404BACD0C788 /* LoginView.swift in Sources */,
@@ -245,6 +267,8 @@
 				8D107A1AA78143F8894DC7CD /* ProfileView.swift in Sources */,
 				01D52D01C9D04FC188433783 /* SignUpView.swift in Sources */,
 				BB527BA0C8924B09BA8FDB35 /* User.swift in Sources */,
+				CP002USERPROFILE002CP002USE /* USER_PROFILE.swift in Sources */,
+				CP006USERPROFILE006CP006USE0 /* USER_PROFILE_VIEW.swift in Sources */,
 				WF002CONSTANTS002WF002CONST /* WORKFLOW_CONSTANTS.swift in Sources */,
 				WF003MANAGER003WF003MANAGER /* WORKFLOW_MANAGER.swift in Sources */,
 				WF004MAPPIN004WF004MAPPIN00 /* WORKFLOW_MAP_PIN.swift in Sources */,

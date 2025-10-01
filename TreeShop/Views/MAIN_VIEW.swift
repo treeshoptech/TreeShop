@@ -7,6 +7,9 @@ struct MAIN_VIEW: View {
     @State private var workflowManager = WORKFLOW_MANAGER()
     @State private var isMenuOpen = false
     @State private var showingSearch = false
+    @State private var showingEmployees = false
+    @State private var showingProfile = false
+    @State private var showingCompany = false
 
     var body: some View {
         ZStack {
@@ -53,15 +56,38 @@ struct MAIN_VIEW: View {
             }
 
             // Master menu overlay
-            MASTER_MENU(isOpen: $isMenuOpen)
+            MASTER_MENU(
+                isOpen: $isMenuOpen,
+                showingEmployees: $showingEmployees,
+                showingProfile: $showingProfile,
+                showingCompany: $showingCompany
+            )
 
             // Address search overlay
             if showingSearch {
                 ADDRESS_SEARCH_VIEW(isPresented: $showingSearch)
             }
         }
+        .sheet(isPresented: $showingEmployees) {
+            EMPLOYEES_VIEW()
+        }
+        .sheet(isPresented: $showingProfile) {
+            USER_PROFILE_VIEW()
+        }
+        .sheet(isPresented: $showingCompany) {
+            COMPANY_SETTINGS_VIEW()
+        }
         .onAppear {
             workflowManager.setContext(modelContext)
+        }
+        .onChange(of: showingEmployees) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingProfile) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingCompany) { _, newValue in
+            if newValue { isMenuOpen = false }
         }
         .preferredColorScheme(.dark)
     }

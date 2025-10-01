@@ -23,7 +23,10 @@ struct TreeShopApp: App {
                 User.self,
                 Drawing.self,
                 Coordinate.self,
-                LEAD.self
+                LEAD.self,
+                COMPANY.self,
+                USER_PROFILE.self,
+                EMPLOYEE.self
             ])
             let config = ModelConfiguration(
                 schema: schema,

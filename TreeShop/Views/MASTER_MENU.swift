@@ -48,6 +48,8 @@ enum MENU_ACTION {
     case EQUIPMENT
     case REPORTS
     case SETTINGS
+    case PROFILE
+    case COMPANY_SETTINGS
     case ADD_LEAD
     case ADD_CUSTOMER
     case QUICK_MEASUREMENT
@@ -62,6 +64,10 @@ enum MENU_ACTION {
 
 struct MASTER_MENU: View {
     @Binding var isOpen: Bool
+    @Binding var showingEmployees: Bool
+    @Binding var showingProfile: Bool
+    @Binding var showingCompany: Bool
+
     @State private var currentLevel: MENU_LEVEL = .LEVEL_1
     @State private var selectedItem: MENU_ITEM?
     @State private var navigationStack: [MENU_ITEM] = []
@@ -170,8 +176,16 @@ struct MASTER_MENU: View {
     }
 
     private func executeAction(_ action: MENU_ACTION) {
-        print("Executing action: \(action)")
-        // Handle menu actions here
+        switch action {
+        case .EMPLOYEES:
+            showingEmployees = true
+        case .PROFILE:
+            showingProfile = true
+        case .COMPANY_SETTINGS, .SETTINGS:
+            showingCompany = true
+        default:
+            print("Action not yet implemented: \(action)")
+        }
     }
 }
 
@@ -182,6 +196,13 @@ struct MENU_LEVEL_1: View {
     let onClose: () -> Void
 
     private let menuItems: [MENU_ITEM] = [
+        MENU_ITEM(
+            title: "Profile",
+            icon: "person.crop.circle.fill",
+            color: APP_THEME.WARNING,
+            action: .PROFILE,
+            subItems: []
+        ),
         MENU_ITEM(
             title: "Leads",
             icon: "person.crop.circle.badge.plus",
@@ -259,7 +280,10 @@ struct MENU_LEVEL_1: View {
             title: "Settings",
             icon: "gearshape.fill",
             action: .SETTINGS,
-            subItems: []
+            subItems: [
+                MENU_ITEM(title: "Company Settings", icon: "building.2.fill", action: .COMPANY_SETTINGS),
+                MENU_ITEM(title: "User Profile", icon: "person.circle.fill", action: .PROFILE)
+            ]
         )
     ]
 
