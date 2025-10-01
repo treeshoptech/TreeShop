@@ -57,7 +57,7 @@ struct TreeShopApp: App {
                 MAIN_VIEW()
                     .environment(authService)
             } else {
-                LoginView()
+                APPLE_SIGN_IN_VIEW()
                     .environment(authService)
             }
         }

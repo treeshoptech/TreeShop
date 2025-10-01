@@ -14,15 +14,17 @@ final class User {
     var email: String
     var passwordHash: String
     var name: String
+    var appleUserID: String? // Apple's unique user identifier
     var createdAt: Date
-    var lastLoginAt: Date
+    var lastLoginAt: Date?
 
     init(email: String, passwordHash: String, name: String) {
         self.id = UUID()
         self.email = email
         self.passwordHash = passwordHash
         self.name = name
+        self.appleUserID = nil
         self.createdAt = Date()
-        self.lastLoginAt = Date()
+        self.lastLoginAt = nil
     }
 }

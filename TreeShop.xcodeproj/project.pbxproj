@@ -56,6 +56,7 @@
 		PR002WORKORDER002PR002WORKO0 /* WORK_ORDER.swift in Sources */ = {isa = PBXBuildFile; fileRef = PR002WORKORDERREF002PR002 /* WORK_ORDER.swift */; };
 		PR003CREATEPROPOSAL003PR003C /* CREATE_PROPOSAL_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = PR003CREATEPROPOSALREF00 /* CREATE_PROPOSAL_VIEW.swift */; };
 		PR004PROPOSALSVIEW004PR004PR /* PROPOSALS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = PR004PROPOSALSVIEWREF004 /* PROPOSALS_VIEW.swift */; };
+		AP001APPLESIGNIN001AP001APP /* APPLE_SIGN_IN_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = AP001APPLESIGNINREF001AP /* APPLE_SIGN_IN_VIEW.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 		PR002WORKORDERREF002PR002 /* WORK_ORDER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORK_ORDER.swift; sourceTree = "<group>"; };
 		PR003CREATEPROPOSALREF00 /* CREATE_PROPOSAL_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CREATE_PROPOSAL_VIEW.swift; sourceTree = "<group>"; };
 		PR004PROPOSALSVIEWREF004 /* PROPOSALS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROPOSALS_VIEW.swift; sourceTree = "<group>"; };
+		AP001APPLESIGNINREF001AP /* APPLE_SIGN_IN_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPLE_SIGN_IN_VIEW.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				WF006ADDLEADREF006WF006AD /* ADD_LEAD_FORM.swift */,
 				WF009ADDSEARCHREF009WF009A /* ADDRESS_SEARCH_VIEW.swift */,
+				AP001APPLESIGNINREF001AP /* APPLE_SIGN_IN_VIEW.swift */,
 				CT003CALENDARREF003CT003C /* CALENDAR_VIEW.swift */,
 				CP004COMPANYSETTINGSREF004 /* COMPANY_SETTINGS_VIEW.swift */,
 				WF007COMPONENTSREF007WF007 /* COMPONENT_LIBRARY.swift */,
@@ -305,6 +308,7 @@
 			files = (
 				WF006ADDLEAD006WF006ADDLEAD /* ADD_LEAD_FORM.swift in Sources */,
 				WF009ADDSEARCH009WF009ADDSE /* ADDRESS_SEARCH_VIEW.swift in Sources */,
+				AP001APPLESIGNIN001AP001APP /* APPLE_SIGN_IN_VIEW.swift in Sources */,
 				CT003CALENDAR003CT003CALENDA /* CALENDAR_VIEW.swift in Sources */,
 				CP001COMPANYMODEL001CP001CO /* COMPANY.swift in Sources */,
 				CP004COMPANYSETTINGS004CP004 /* COMPANY_SETTINGS_VIEW.swift in Sources */,
@@ -322,7 +326,6 @@
 				EQ002EQUIPMENTVIEW002EQ002EQ /* EQUIPMENT_VIEW.swift in Sources */,
 				11111111111111INTERACTIVE11 /* InteractiveMapView.swift in Sources */,
 				WF001LEADMODEL001WF001LEAD /* LEAD.swift in Sources */,
-				4C77AA7257CC404BACD0C788 /* LoginView.swift in Sources */,
 				WF008MAINVIEW008WF008MAINV0 /* MAIN_VIEW.swift in Sources */,
 				E8442F4C6C134A1CB6D4D7B8 /* MapView.swift in Sources */,
 				WF005MENU005WF005MENU005WF0 /* MASTER_MENU.swift in Sources */,
@@ -336,7 +339,6 @@
 				ST001REPORTSVIEW001ST001REP0 /* REPORTS_VIEW.swift in Sources */,
 				CT001SCHEDULEDJOB001CT001SC0 /* SCHEDULED_JOB.swift in Sources */,
 				ST002SETTINGSVIEW002ST002SET /* SETTINGS_VIEW.swift in Sources */,
-				01D52D01C9D04FC188433783 /* SignUpView.swift in Sources */,
 				CT002TIMEENTRY002CT002TIMEEN /* TIME_ENTRY.swift in Sources */,
 				CT004TIMETRACKER004CT004TIME /* TIME_TRACKER_VIEW.swift in Sources */,
 				CP009TREE009CP009TREE009CP00 /* TREE.swift in Sources */,
