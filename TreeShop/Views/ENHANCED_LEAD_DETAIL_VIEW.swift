@@ -12,6 +12,7 @@ struct ENHANCED_LEAD_DETAIL_VIEW: View {
     @State private var showingConvertToCustomer = false
     @State private var showingScheduleSiteVisit = false
     @State private var showingAssignEmployee = false
+    @State private var showingCreateProposal = false
 
     var existingCustomer: CUSTOMER? {
         if let customerID = lead.customerID {
@@ -254,7 +255,15 @@ struct ENHANCED_LEAD_DETAIL_VIEW: View {
 
                     // Actions
                     VStack(spacing: APP_THEME.SPACING_SM) {
-                        if lead.currentStage.nextStage != nil {
+                        if lead.currentStage == .LEAD {
+                            ACTION_BUTTON(
+                                title: "Create Proposal",
+                                icon: "doc.badge.plus",
+                                color: WORKFLOW_COLORS.PROPOSAL
+                            ) {
+                                showingCreateProposal = true
+                            }
+                        } else if lead.currentStage.nextStage != nil {
                             ACTION_BUTTON(
                                 title: "Advance to \(lead.currentStage.nextStage!.displayName)",
                                 icon: "arrow.right.circle.fill",
@@ -300,6 +309,9 @@ struct ENHANCED_LEAD_DETAIL_VIEW: View {
         }
         .sheet(isPresented: $showingAssignEmployee) {
             ASSIGN_EMPLOYEE_VIEW(lead: lead)
+        }
+        .sheet(isPresented: $showingCreateProposal) {
+            CREATE_PROPOSAL_VIEW(lead: lead)
         }
         .onAppear {
             workflowManager.setContext(modelContext)

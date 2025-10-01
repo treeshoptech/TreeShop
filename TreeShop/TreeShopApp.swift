@@ -24,6 +24,8 @@ struct TreeShopApp: App {
                 Drawing.self,
                 Coordinate.self,
                 LEAD.self,
+                PROPOSAL.self,
+                WORK_ORDER.self,
                 COMPANY.self,
                 USER_PROFILE.self,
                 EMPLOYEE.self,

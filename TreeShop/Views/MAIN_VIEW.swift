@@ -20,6 +20,7 @@ struct MAIN_VIEW: View {
     @State private var showingSettings = false
     @State private var showingLeads = false
     @State private var showingAddLead = false
+    @State private var showingProposals = false
 
     var body: some View {
         ZStack {
@@ -80,7 +81,8 @@ struct MAIN_VIEW: View {
                 showingReports: $showingReports,
                 showingSettings: $showingSettings,
                 showingLeads: $showingLeads,
-                showingAddLead: $showingAddLead
+                showingAddLead: $showingAddLead,
+                showingProposals: $showingProposals
             )
 
             // Address search overlay
@@ -127,6 +129,9 @@ struct MAIN_VIEW: View {
         .sheet(isPresented: $showingAddLead) {
             ADD_LEAD_FORM()
         }
+        .sheet(isPresented: $showingProposals) {
+            PROPOSALS_VIEW()
+        }
         .onAppear {
             workflowManager.setContext(modelContext)
         }
@@ -167,6 +172,9 @@ struct MAIN_VIEW: View {
             if newValue { isMenuOpen = false }
         }
         .onChange(of: showingAddLead) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingProposals) { _, newValue in
             if newValue { isMenuOpen = false }
         }
         .preferredColorScheme(.dark)

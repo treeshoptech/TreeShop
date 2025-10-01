@@ -81,6 +81,7 @@ struct MASTER_MENU: View {
     @Binding var showingSettings: Bool
     @Binding var showingLeads: Bool
     @Binding var showingAddLead: Bool
+    @Binding var showingProposals: Bool
 
     @State private var currentLevel: MENU_LEVEL = .LEVEL_1
     @State private var selectedItem: MENU_ITEM?
@@ -195,6 +196,8 @@ struct MASTER_MENU: View {
             showingLeads = true
         case .ADD_LEAD:
             showingAddLead = true
+        case .PROPOSALS:
+            showingProposals = true
         case .EMPLOYEES:
             showingEmployees = true
         case .PROFILE:

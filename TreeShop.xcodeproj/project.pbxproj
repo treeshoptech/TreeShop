@@ -52,6 +52,10 @@
 		ST001REPORTSVIEW001ST001REP0 /* REPORTS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = ST001REPORTSVIEWREF001ST0 /* REPORTS_VIEW.swift */; };
 		ST002SETTINGSVIEW002ST002SET /* SETTINGS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = ST002SETTINGSVIEWREF002ST /* SETTINGS_VIEW.swift */; };
 		LD001ENHANCEDLEAD001LD001EN0 /* ENHANCED_LEAD_DETAIL_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = LD001ENHANCEDLEADREF001LD /* ENHANCED_LEAD_DETAIL_VIEW.swift */; };
+		PR001PROPOSAL001PR001PROPOS0 /* PROPOSAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = PR001PROPOSALREF001PR001P /* PROPOSAL.swift */; };
+		PR002WORKORDER002PR002WORKO0 /* WORK_ORDER.swift in Sources */ = {isa = PBXBuildFile; fileRef = PR002WORKORDERREF002PR002 /* WORK_ORDER.swift */; };
+		PR003CREATEPROPOSAL003PR003C /* CREATE_PROPOSAL_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = PR003CREATEPROPOSALREF00 /* CREATE_PROPOSAL_VIEW.swift */; };
+		PR004PROPOSALSVIEW004PR004PR /* PROPOSALS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = PR004PROPOSALSVIEWREF004 /* PROPOSALS_VIEW.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +105,10 @@
 		ST001REPORTSVIEWREF001ST0 /* REPORTS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REPORTS_VIEW.swift; sourceTree = "<group>"; };
 		ST002SETTINGSVIEWREF002ST /* SETTINGS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SETTINGS_VIEW.swift; sourceTree = "<group>"; };
 		LD001ENHANCEDLEADREF001LD /* ENHANCED_LEAD_DETAIL_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENHANCED_LEAD_DETAIL_VIEW.swift; sourceTree = "<group>"; };
+		PR001PROPOSALREF001PR001P /* PROPOSAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROPOSAL.swift; sourceTree = "<group>"; };
+		PR002WORKORDERREF002PR002 /* WORK_ORDER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WORK_ORDER.swift; sourceTree = "<group>"; };
+		PR003CREATEPROPOSALREF00 /* CREATE_PROPOSAL_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CREATE_PROPOSAL_VIEW.swift; sourceTree = "<group>"; };
+		PR004PROPOSALSVIEWREF004 /* PROPOSALS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROPOSALS_VIEW.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,7 @@
 				CT003CALENDARREF003CT003C /* CALENDAR_VIEW.swift */,
 				CP004COMPANYSETTINGSREF004 /* COMPANY_SETTINGS_VIEW.swift */,
 				WF007COMPONENTSREF007WF007 /* COMPONENT_LIBRARY.swift */,
+				PR003CREATEPROPOSALREF00 /* CREATE_PROPOSAL_VIEW.swift */,
 				CP010CUSTOMERSVIEWREF010 /* CUSTOMERS_VIEW.swift */,
 				DDD724FB5A3E6CB46DDA4536 /* DrawingEditMenu.swift */,
 				BBB0EDEEBE9050240AAB7016 /* DrawingToolbar.swift */,
@@ -152,6 +161,7 @@
 				BBB2222222222222222222222 /* MeasurementOverlay.swift */,
 				F489ED8DFE794B9FBC6E50FE /* ProfileView.swift */,
 				CP011PROPERTIESVIEWREF01 /* PROPERTIES_VIEW.swift */,
+				PR004PROPOSALSVIEWREF004 /* PROPOSALS_VIEW.swift */,
 				ST001REPORTSVIEWREF001ST0 /* REPORTS_VIEW.swift */,
 				ST002SETTINGSVIEWREF002ST /* SETTINGS_VIEW.swift */,
 				6CC09A8639AA4D0892767FFD /* SignUpView.swift */,
@@ -188,10 +198,12 @@
 				EQ001EQUIPMENTREF001EQ001 /* EQUIPMENT.swift */,
 				WF001LEADMODELREF001WF001L /* LEAD.swift */,
 				CP008PROPERTYREF008CP008P /* PROPERTY.swift */,
+				PR001PROPOSALREF001PR001P /* PROPOSAL.swift */,
 				CT001SCHEDULEDJOBREF001CT /* SCHEDULED_JOB.swift */,
 				CT002TIMEENTRYREF002CT002 /* TIME_ENTRY.swift */,
 				CP009TREEREF009CP009TREE /* TREE.swift */,
 				71B1BAD2398A4808BC2F55E9 /* User.swift */,
+				PR002WORKORDERREF002PR002 /* WORK_ORDER.swift */,
 				CP002USERPROFILEREF002CP00 /* USER_PROFILE.swift */,
 			);
 			path = Models;
@@ -314,6 +326,9 @@
 				WF008MAINVIEW008WF008MAINV0 /* MAIN_VIEW.swift in Sources */,
 				E8442F4C6C134A1CB6D4D7B8 /* MapView.swift in Sources */,
 				WF005MENU005WF005MENU005WF0 /* MASTER_MENU.swift in Sources */,
+				PR001PROPOSAL001PR001PROPOS0 /* PROPOSAL.swift in Sources */,
+				PR003CREATEPROPOSAL003PR003C /* CREATE_PROPOSAL_VIEW.swift in Sources */,
+				PR004PROPOSALSVIEW004PR004PR /* PROPOSALS_VIEW.swift in Sources */,
 				22222222222222MEASUREMENT22 /* MeasurementOverlay.swift in Sources */,
 				8D107A1AA78143F8894DC7CD /* ProfileView.swift in Sources */,
 				CP011PROPERTIESVIEW011CP011P /* PROPERTIES_VIEW.swift in Sources */,
@@ -330,6 +345,7 @@
 				CP002USERPROFILE002CP002USE /* USER_PROFILE.swift in Sources */,
 				CP006USERPROFILE006CP006USE0 /* USER_PROFILE_VIEW.swift in Sources */,
 				WF002CONSTANTS002WF002CONST /* WORKFLOW_CONSTANTS.swift in Sources */,
+				PR002WORKORDER002PR002WORKO0 /* WORK_ORDER.swift in Sources */,
 				WF003MANAGER003WF003MANAGER /* WORKFLOW_MANAGER.swift in Sources */,
 				WF004MAPPIN004WF004MAPPIN00 /* WORKFLOW_MAP_PIN.swift in Sources */,
 				9DD3A4E0AFA54C30B6A50A72 /* AuthService.swift in Sources */,
