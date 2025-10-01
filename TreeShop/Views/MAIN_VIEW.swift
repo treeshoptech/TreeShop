@@ -10,6 +10,9 @@ struct MAIN_VIEW: View {
     @State private var showingEmployees = false
     @State private var showingProfile = false
     @State private var showingCompany = false
+    @State private var showingCustomers = false
+    @State private var showingProperties = false
+    @State private var showingTrees = false
 
     var body: some View {
         ZStack {
@@ -60,7 +63,10 @@ struct MAIN_VIEW: View {
                 isOpen: $isMenuOpen,
                 showingEmployees: $showingEmployees,
                 showingProfile: $showingProfile,
-                showingCompany: $showingCompany
+                showingCompany: $showingCompany,
+                showingCustomers: $showingCustomers,
+                showingProperties: $showingProperties,
+                showingTrees: $showingTrees
             )
 
             // Address search overlay
@@ -77,6 +83,15 @@ struct MAIN_VIEW: View {
         .sheet(isPresented: $showingCompany) {
             COMPANY_SETTINGS_VIEW()
         }
+        .sheet(isPresented: $showingCustomers) {
+            CUSTOMERS_VIEW()
+        }
+        .sheet(isPresented: $showingProperties) {
+            PROPERTIES_VIEW()
+        }
+        .sheet(isPresented: $showingTrees) {
+            TREES_VIEW()
+        }
         .onAppear {
             workflowManager.setContext(modelContext)
         }
@@ -87,6 +102,15 @@ struct MAIN_VIEW: View {
             if newValue { isMenuOpen = false }
         }
         .onChange(of: showingCompany) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingCustomers) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingProperties) { _, newValue in
+            if newValue { isMenuOpen = false }
+        }
+        .onChange(of: showingTrees) { _, newValue in
             if newValue { isMenuOpen = false }
         }
         .preferredColorScheme(.dark)

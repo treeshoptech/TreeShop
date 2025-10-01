@@ -37,6 +37,12 @@
 		CP004COMPANYSETTINGS004CP004 /* COMPANY_SETTINGS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP004COMPANYSETTINGSREF004 /* COMPANY_SETTINGS_VIEW.swift */; };
 		CP005EMPLOYEES005CP005EMPLOY /* EMPLOYEES_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP005EMPLOYEESREF005CP005 /* EMPLOYEES_VIEW.swift */; };
 		CP006USERPROFILE006CP006USE0 /* USER_PROFILE_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP006USERPROFILEREF006CP0 /* USER_PROFILE_VIEW.swift */; };
+		CP007CUSTOMER007CP007CUSTOM0 /* CUSTOMER.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP007CUSTOMERREF007CP007C /* CUSTOMER.swift */; };
+		CP008PROPERTY008CP008PROPER0 /* PROPERTY.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP008PROPERTYREF008CP008P /* PROPERTY.swift */; };
+		CP009TREE009CP009TREE009CP00 /* TREE.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP009TREEREF009CP009TREE /* TREE.swift */; };
+		CP010CUSTOMERSVIEW010CP010CU /* CUSTOMERS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP010CUSTOMERSVIEWREF010 /* CUSTOMERS_VIEW.swift */; };
+		CP011PROPERTIESVIEW011CP011P /* PROPERTIES_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP011PROPERTIESVIEWREF01 /* PROPERTIES_VIEW.swift */; };
+		CP012TREESVIEW012CP012TREES0 /* TREES_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CP012TREESVIEWREF012CP01 /* TREES_VIEW.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +77,12 @@
 		CP004COMPANYSETTINGSREF004 /* COMPANY_SETTINGS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COMPANY_SETTINGS_VIEW.swift; sourceTree = "<group>"; };
 		CP005EMPLOYEESREF005CP005 /* EMPLOYEES_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMPLOYEES_VIEW.swift; sourceTree = "<group>"; };
 		CP006USERPROFILEREF006CP0 /* USER_PROFILE_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USER_PROFILE_VIEW.swift; sourceTree = "<group>"; };
+		CP007CUSTOMERREF007CP007C /* CUSTOMER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUSTOMER.swift; sourceTree = "<group>"; };
+		CP008PROPERTYREF008CP008P /* PROPERTY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROPERTY.swift; sourceTree = "<group>"; };
+		CP009TREEREF009CP009TREE /* TREE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TREE.swift; sourceTree = "<group>"; };
+		CP010CUSTOMERSVIEWREF010 /* CUSTOMERS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUSTOMERS_VIEW.swift; sourceTree = "<group>"; };
+		CP011PROPERTIESVIEWREF01 /* PROPERTIES_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PROPERTIES_VIEW.swift; sourceTree = "<group>"; };
+		CP012TREESVIEWREF012CP01 /* TREES_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TREES_VIEW.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,7 @@
 				WF009ADDSEARCHREF009WF009A /* ADDRESS_SEARCH_VIEW.swift */,
 				CP004COMPANYSETTINGSREF004 /* COMPANY_SETTINGS_VIEW.swift */,
 				WF007COMPONENTSREF007WF007 /* COMPONENT_LIBRARY.swift */,
+				CP010CUSTOMERSVIEWREF010 /* CUSTOMERS_VIEW.swift */,
 				DDD724FB5A3E6CB46DDA4536 /* DrawingEditMenu.swift */,
 				BBB0EDEEBE9050240AAB7016 /* DrawingToolbar.swift */,
 				CP005EMPLOYEESREF005CP005 /* EMPLOYEES_VIEW.swift */,
@@ -117,7 +130,9 @@
 				WF005MENUREF005WF005MENU0 /* MASTER_MENU.swift */,
 				BBB2222222222222222222222 /* MeasurementOverlay.swift */,
 				F489ED8DFE794B9FBC6E50FE /* ProfileView.swift */,
+				CP011PROPERTIESVIEWREF01 /* PROPERTIES_VIEW.swift */,
 				6CC09A8639AA4D0892767FFD /* SignUpView.swift */,
+				CP012TREESVIEWREF012CP01 /* TREES_VIEW.swift */,
 				CP006USERPROFILEREF006CP0 /* USER_PROFILE_VIEW.swift */,
 				WF004MAPPINREF004WF004MAP /* WORKFLOW_MAP_PIN.swift */,
 			);
@@ -143,9 +158,12 @@
 			isa = PBXGroup;
 			children = (
 				CP001COMPANYMODELREF001CP00 /* COMPANY.swift */,
+				CP007CUSTOMERREF007CP007C /* CUSTOMER.swift */,
 				CCC16070A42D8344C0EBD502 /* Drawing.swift */,
 				CP003EMPLOYEEREF003CP003E /* EMPLOYEE.swift */,
 				WF001LEADMODELREF001WF001L /* LEAD.swift */,
+				CP008PROPERTYREF008CP008P /* PROPERTY.swift */,
+				CP009TREEREF009CP009TREE /* TREE.swift */,
 				71B1BAD2398A4808BC2F55E9 /* User.swift */,
 				CP002USERPROFILEREF002CP00 /* USER_PROFILE.swift */,
 			);
@@ -251,6 +269,8 @@
 				CP001COMPANYMODEL001CP001CO /* COMPANY.swift in Sources */,
 				CP004COMPANYSETTINGS004CP004 /* COMPANY_SETTINGS_VIEW.swift in Sources */,
 				WF007COMPONENTS007WF007COMP /* COMPONENT_LIBRARY.swift in Sources */,
+				CP007CUSTOMER007CP007CUSTOM0 /* CUSTOMER.swift in Sources */,
+				CP010CUSTOMERSVIEW010CP010CU /* CUSTOMERS_VIEW.swift in Sources */,
 				16070A42D8344C0EBD502CD4 /* Drawing.swift in Sources */,
 				724FB5A3E6CB46DDA45368E6 /* DrawingEditMenu.swift in Sources */,
 				0EDEEBE9050240AAB7016E61 /* DrawingToolbar.swift in Sources */,
@@ -265,7 +285,11 @@
 				WF005MENU005WF005MENU005WF0 /* MASTER_MENU.swift in Sources */,
 				22222222222222MEASUREMENT22 /* MeasurementOverlay.swift in Sources */,
 				8D107A1AA78143F8894DC7CD /* ProfileView.swift in Sources */,
+				CP011PROPERTIESVIEW011CP011P /* PROPERTIES_VIEW.swift in Sources */,
+				CP008PROPERTY008CP008PROPER0 /* PROPERTY.swift in Sources */,
 				01D52D01C9D04FC188433783 /* SignUpView.swift in Sources */,
+				CP009TREE009CP009TREE009CP00 /* TREE.swift in Sources */,
+				CP012TREESVIEW012CP012TREES0 /* TREES_VIEW.swift in Sources */,
 				BB527BA0C8924B09BA8FDB35 /* User.swift in Sources */,
 				CP002USERPROFILE002CP002USE /* USER_PROFILE.swift in Sources */,
 				CP006USERPROFILE006CP006USE0 /* USER_PROFILE_VIEW.swift in Sources */,

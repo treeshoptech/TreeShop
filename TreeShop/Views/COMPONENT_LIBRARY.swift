@@ -1,4 +1,5 @@
 import SwiftUI
+import MapKit
 
 // MARK: - FORM SECTION
 
@@ -415,6 +416,208 @@ struct LOADING_INDICATOR: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(APP_THEME.BG_PRIMARY.opacity(0.8))
+    }
+}
+
+// MARK: - ADDRESS INPUT WITH AUTOCOMPLETE
+
+struct ADDRESS_INPUT_FIELD: View {
+    @Binding var address: String
+    @Binding var city: String
+    @Binding var state: String
+    @Binding var zipCode: String
+    @Binding var coordinate: CLLocationCoordinate2D?
+
+    @State private var searchText = ""
+    @State private var searchResults: [MKMapItem] = []
+    @State private var isSearching = false
+    @State private var showingResults = false
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: APP_THEME.SPACING_SM) {
+            Text("Address")
+                .font(.subheadline)
+                .foregroundColor(APP_THEME.TEXT_SECONDARY)
+
+            VStack(spacing: 0) {
+                // Search field
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(APP_THEME.TEXT_TERTIARY)
+
+                    TextField("Start typing address...", text: $searchText)
+                        .foregroundColor(APP_THEME.TEXT_PRIMARY)
+                        .onChange(of: searchText) { _, newValue in
+                            performSearch(query: newValue)
+                        }
+
+                    if isSearching {
+                        ProgressView()
+                            .tint(APP_THEME.PRIMARY)
+                    } else if !searchText.isEmpty {
+                        Button(action: {
+                            searchText = ""
+                            searchResults = []
+                            showingResults = false
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(APP_THEME.TEXT_TERTIARY)
+                        }
+                    }
+                }
+                .padding(APP_THEME.SPACING_MD)
+                .background(APP_THEME.BG_TERTIARY)
+                .cornerRadius(showingResults && !searchResults.isEmpty ? [.topLeft, .topRight] : .allCorners, APP_THEME.RADIUS_SM)
+
+                // Results dropdown
+                if showingResults && !searchResults.isEmpty {
+                    VStack(spacing: 0) {
+                        Divider()
+                            .background(APP_THEME.TEXT_TERTIARY.opacity(0.3))
+
+                        ScrollView {
+                            VStack(spacing: 0) {
+                                ForEach(searchResults.prefix(5), id: \.self) { result in
+                                    Button(action: {
+                                        selectAddress(result)
+                                    }) {
+                                        HStack(spacing: APP_THEME.SPACING_SM) {
+                                            Image(systemName: "mappin.circle.fill")
+                                                .font(.caption)
+                                                .foregroundColor(APP_THEME.PRIMARY)
+
+                                            VStack(alignment: .leading, spacing: 2) {
+                                                if let name = result.name {
+                                                    Text(name)
+                                                        .font(.body)
+                                                        .foregroundColor(APP_THEME.TEXT_PRIMARY)
+                                                }
+                                                if let thoroughfare = result.placemark.thoroughfare {
+                                                    Text(thoroughfare)
+                                                        .font(.caption)
+                                                        .foregroundColor(APP_THEME.TEXT_SECONDARY)
+                                                }
+                                                if let locality = result.placemark.locality,
+                                                   let state = result.placemark.administrativeArea {
+                                                    Text("\(locality), \(state)")
+                                                        .font(.caption2)
+                                                        .foregroundColor(APP_THEME.TEXT_TERTIARY)
+                                                }
+                                            }
+
+                                            Spacer()
+                                        }
+                                        .padding(APP_THEME.SPACING_SM)
+                                        .contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
+
+                                    if result != searchResults.prefix(5).last {
+                                        Divider()
+                                            .background(APP_THEME.TEXT_TERTIARY.opacity(0.2))
+                                    }
+                                }
+                            }
+                        }
+                        .frame(maxHeight: 200)
+                    }
+                    .background(APP_THEME.BG_TERTIARY)
+                    .cornerRadius([.bottomLeft, .bottomRight], APP_THEME.RADIUS_SM)
+                }
+            }
+
+            // Selected address display
+            if !address.isEmpty {
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(APP_THEME.SUCCESS)
+                            .font(.caption)
+
+                        Text("Selected:")
+                            .font(.caption)
+                            .foregroundColor(APP_THEME.TEXT_TERTIARY)
+                    }
+
+                    Text(address)
+                        .font(.body)
+                        .foregroundColor(APP_THEME.TEXT_PRIMARY)
+
+                    Text("\(city), \(state) \(zipCode)")
+                        .font(.caption)
+                        .foregroundColor(APP_THEME.TEXT_SECONDARY)
+                }
+                .padding(APP_THEME.SPACING_SM)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(APP_THEME.SUCCESS.opacity(0.1))
+                .cornerRadius(APP_THEME.RADIUS_SM)
+            }
+        }
+    }
+
+    private func performSearch(query: String) {
+        guard query.count > 2 else {
+            searchResults = []
+            showingResults = false
+            return
+        }
+
+        isSearching = true
+        showingResults = true
+
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+
+        let search = MKLocalSearch(request: request)
+        search.start { response, error in
+            isSearching = false
+
+            guard let response = response else {
+                searchResults = []
+                return
+            }
+
+            searchResults = response.mapItems
+        }
+    }
+
+    private func selectAddress(_ mapItem: MKMapItem) {
+        let placemark = mapItem.placemark
+
+        // Extract address components
+        address = placemark.thoroughfare ?? ""
+        city = placemark.locality ?? ""
+        state = placemark.administrativeArea ?? ""
+        zipCode = placemark.postalCode ?? ""
+        coordinate = placemark.coordinate
+
+        // Update search text to show full address
+        searchText = "\(address), \(city), \(state) \(zipCode)"
+
+        // Hide results
+        showingResults = false
+    }
+}
+
+// MARK: - CORNER RADIUS EXTENSION
+
+extension View {
+    func cornerRadius(_ corners: UIRectCorner, _ radius: CGFloat) -> some View {
+        clipShape(RoundedCorner(radius: radius, corners: corners))
+    }
+}
+
+struct RoundedCorner: Shape {
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(
+            roundedRect: rect,
+            byRoundingCorners: corners,
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
+        return Path(path.cgPath)
     }
 }
 

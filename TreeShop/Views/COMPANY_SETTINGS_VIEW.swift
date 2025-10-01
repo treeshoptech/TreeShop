@@ -161,13 +161,13 @@ struct CREATE_COMPANY_VIEW: View {
                         }
 
                         FORM_SECTION(title: "Business Address", icon: "location.fill", color: APP_THEME.INFO) {
-                            TEXT_FIELD_ROW(title: "Street Address", text: $businessAddress, placeholder: "123 Main St")
-                            TEXT_FIELD_ROW(title: "City", text: $city, placeholder: "City")
-                            HStack(spacing: APP_THEME.SPACING_SM) {
-                                TEXT_FIELD_ROW(title: "State", text: $state, placeholder: "ST")
-                                    .frame(width: 80)
-                                TEXT_FIELD_ROW(title: "ZIP", text: $zipCode, placeholder: "12345", keyboardType: .numberPad)
-                            }
+                            ADDRESS_INPUT_FIELD(
+                                address: $businessAddress,
+                                city: $city,
+                                state: $state,
+                                zipCode: $zipCode,
+                                coordinate: .constant(nil)
+                            )
                         }
 
                         ACTION_BUTTON(

@@ -75,54 +75,13 @@ struct ADD_LEAD_FORM: View {
 
                         // Property Section
                         FORM_SECTION(title: "Property Location", icon: "map.fill", color: APP_THEME.PRIMARY) {
-                            TEXT_FIELD_ROW(
-                                title: "Address",
-                                text: $propertyAddress,
-                                placeholder: "123 Main St"
+                            ADDRESS_INPUT_FIELD(
+                                address: $propertyAddress,
+                                city: $propertyCity,
+                                state: $propertyState,
+                                zipCode: $propertyZip,
+                                coordinate: $selectedCoordinate
                             )
-
-                            HStack(spacing: APP_THEME.SPACING_SM) {
-                                TEXT_FIELD_ROW(
-                                    title: "City",
-                                    text: $propertyCity,
-                                    placeholder: "City"
-                                )
-
-                                TEXT_FIELD_ROW(
-                                    title: "State",
-                                    text: $propertyState,
-                                    placeholder: "ST"
-                                )
-                                .frame(width: 80)
-
-                                TEXT_FIELD_ROW(
-                                    title: "Zip",
-                                    text: $propertyZip,
-                                    placeholder: "12345",
-                                    keyboardType: .numberPad
-                                )
-                                .frame(width: 100)
-                            }
-
-                            Button(action: { showingMapPicker = true }) {
-                                HStack {
-                                    Image(systemName: "mappin.circle.fill")
-                                        .foregroundColor(APP_THEME.PRIMARY)
-
-                                    Text(selectedCoordinate == nil ? "Select on Map" : "Location Selected")
-                                        .foregroundColor(APP_THEME.TEXT_PRIMARY)
-
-                                    Spacer()
-
-                                    if selectedCoordinate != nil {
-                                        Image(systemName: "checkmark.circle.fill")
-                                            .foregroundColor(APP_THEME.SUCCESS)
-                                    }
-                                }
-                                .padding(APP_THEME.SPACING_MD)
-                                .background(APP_THEME.BG_SECONDARY)
-                                .cornerRadius(APP_THEME.RADIUS_MD)
-                            }
 
                             TEXT_FIELD_ROW(
                                 title: "Acres (optional)",

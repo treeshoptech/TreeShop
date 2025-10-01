@@ -67,6 +67,9 @@ struct MASTER_MENU: View {
     @Binding var showingEmployees: Bool
     @Binding var showingProfile: Bool
     @Binding var showingCompany: Bool
+    @Binding var showingCustomers: Bool
+    @Binding var showingProperties: Bool
+    @Binding var showingTrees: Bool
 
     @State private var currentLevel: MENU_LEVEL = .LEVEL_1
     @State private var selectedItem: MENU_ITEM?
@@ -183,6 +186,12 @@ struct MASTER_MENU: View {
             showingProfile = true
         case .COMPANY_SETTINGS, .SETTINGS:
             showingCompany = true
+        case .CUSTOMERS:
+            showingCustomers = true
+        case .PROPERTIES:
+            showingProperties = true
+        case .TREES:
+            showingTrees = true
         default:
             print("Action not yet implemented: \(action)")
         }
