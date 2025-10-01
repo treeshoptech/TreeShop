@@ -14,10 +14,13 @@ final class LEAD {
     var stageHistory: [STAGE_TRANSITION]
 
     // MARK: - CUSTOMER INFORMATION
+    var customerID: UUID? // Link to existing CUSTOMER
     var customerName: String
     var customerPhone: String
     var customerEmail: String?
     var customerNotes: String?
+    var isExistingCustomer: Bool
+    var isRepeatCustomer: Bool
 
     // MARK: - PROPERTY LOCATION
     var propertyAddress: String
@@ -43,8 +46,10 @@ final class LEAD {
     // MARK: - SITE VISIT
     var needsSiteVisit: Bool
     var siteVisitScheduled: Date?
+    var siteVisitScheduledJobID: UUID? // Link to SCHEDULED_JOB
     var siteVisitCompleted: Date?
     var siteVisitNotes: String?
+    var siteVisitAssignedTo: UUID? // Employee ID
 
     // MARK: - PROJECT DETAILS
     var projectDescription: String
@@ -108,10 +113,13 @@ final class LEAD {
         )]
 
         // Customer
+        self.customerID = nil
         self.customerName = customerName
         self.customerPhone = customerPhone
         self.customerEmail = customerEmail
         self.customerNotes = nil
+        self.isExistingCustomer = false
+        self.isRepeatCustomer = false
 
         // Property
         self.propertyAddress = propertyAddress
@@ -137,8 +145,10 @@ final class LEAD {
         // Site visit
         self.needsSiteVisit = needsSiteVisit
         self.siteVisitScheduled = nil
+        self.siteVisitScheduledJobID = nil
         self.siteVisitCompleted = nil
         self.siteVisitNotes = nil
+        self.siteVisitAssignedTo = nil
 
         // Project
         self.projectDescription = projectDescription

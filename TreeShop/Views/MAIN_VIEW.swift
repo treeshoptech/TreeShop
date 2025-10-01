@@ -315,84 +315,12 @@ struct LEAD_CARD: View {
     }
 }
 
-// MARK: - LEAD DETAIL VIEW
+// MARK: - LEAD DETAIL VIEW (Use Enhanced Version)
 
 struct LEAD_DETAIL_VIEW: View {
-    @Environment(\.modelContext) private var modelContext
-    @State private var workflowManager = WORKFLOW_MANAGER()
     let lead: LEAD
 
     var body: some View {
-        ZStack {
-            APP_THEME.BG_PRIMARY.ignoresSafeArea()
-
-            ScrollView {
-                VStack(alignment: .leading, spacing: APP_THEME.SPACING_LG) {
-                    // Workflow progress
-                    WORKFLOW_STAGE_INDICATOR(currentStage: lead.currentStage)
-
-                    // Customer info
-                    FORM_SECTION(title: "Customer", icon: "person.fill", color: WORKFLOW_COLORS.LEAD) {
-                        DETAIL_ROW(icon: "person.fill", label: "Name", value: lead.customerName)
-                        DETAIL_ROW(icon: "phone.fill", label: "Phone", value: lead.customerPhone)
-                        if let email = lead.customerEmail {
-                            DETAIL_ROW(icon: "envelope.fill", label: "Email", value: email)
-                        }
-                    }
-
-                    // Property info
-                    FORM_SECTION(title: "Property", icon: "map.fill", color: APP_THEME.PRIMARY) {
-                        DETAIL_ROW(icon: "location.fill", label: "Address", value: lead.fullAddress)
-                        if let acres = lead.propertyAcres {
-                            DETAIL_ROW(icon: "map", label: "Acres", value: String(format: "%.2f", acres))
-                        }
-                    }
-
-                    // Project details
-                    FORM_SECTION(title: "Project", icon: "tree.fill", color: APP_THEME.SUCCESS) {
-                        VStack(alignment: .leading, spacing: APP_THEME.SPACING_SM) {
-                            Text(lead.projectDescription)
-                                .foregroundColor(APP_THEME.TEXT_PRIMARY)
-                        }
-                        .padding(APP_THEME.SPACING_MD)
-                    }
-
-                    // Actions
-                    VStack(spacing: APP_THEME.SPACING_SM) {
-                        ACTION_BUTTON(
-                            title: "Advance to Proposal",
-                            icon: "arrow.right.circle.fill",
-                            color: WORKFLOW_COLORS.PROPOSAL
-                        ) {
-                            workflowManager.advanceStage(lead)
-                        }
-
-                        ACTION_BUTTON(
-                            title: "Call Customer",
-                            icon: "phone.fill",
-                            color: APP_THEME.INFO,
-                            style: .OUTLINED
-                        ) {
-                            // Handle call
-                        }
-
-                        ACTION_BUTTON(
-                            title: "Schedule Site Visit",
-                            icon: "calendar.badge.plus",
-                            color: APP_THEME.PRIMARY,
-                            style: .OUTLINED
-                        ) {
-                            // Handle scheduling
-                        }
-                    }
-                }
-                .padding(APP_THEME.SPACING_MD)
-            }
-        }
-        .navigationTitle(lead.customerName)
-        .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            workflowManager.setContext(modelContext)
-        }
+        ENHANCED_LEAD_DETAIL_VIEW(lead: lead)
     }
 }

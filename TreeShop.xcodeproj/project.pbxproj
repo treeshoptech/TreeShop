@@ -51,6 +51,7 @@
 		CT004TIMETRACKER004CT004TIME /* TIME_TRACKER_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = CT004TIMETRACKERREF004CT /* TIME_TRACKER_VIEW.swift */; };
 		ST001REPORTSVIEW001ST001REP0 /* REPORTS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = ST001REPORTSVIEWREF001ST0 /* REPORTS_VIEW.swift */; };
 		ST002SETTINGSVIEW002ST002SET /* SETTINGS_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = ST002SETTINGSVIEWREF002ST /* SETTINGS_VIEW.swift */; };
+		LD001ENHANCEDLEAD001LD001EN0 /* ENHANCED_LEAD_DETAIL_VIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = LD001ENHANCEDLEADREF001LD /* ENHANCED_LEAD_DETAIL_VIEW.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		CT004TIMETRACKERREF004CT /* TIME_TRACKER_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIME_TRACKER_VIEW.swift; sourceTree = "<group>"; };
 		ST001REPORTSVIEWREF001ST0 /* REPORTS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REPORTS_VIEW.swift; sourceTree = "<group>"; };
 		ST002SETTINGSVIEWREF002ST /* SETTINGS_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SETTINGS_VIEW.swift; sourceTree = "<group>"; };
+		LD001ENHANCEDLEADREF001LD /* ENHANCED_LEAD_DETAIL_VIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENHANCED_LEAD_DETAIL_VIEW.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				DDD724FB5A3E6CB46DDA4536 /* DrawingEditMenu.swift */,
 				BBB0EDEEBE9050240AAB7016 /* DrawingToolbar.swift */,
 				CP005EMPLOYEESREF005CP005 /* EMPLOYEES_VIEW.swift */,
+				LD001ENHANCEDLEADREF001LD /* ENHANCED_LEAD_DETAIL_VIEW.swift */,
 				EQ002EQUIPMENTVIEWREF002 /* EQUIPMENT_VIEW.swift */,
 				BBB1111111111111111111111 /* InteractiveMapView.swift */,
 				A6DC82A86CED4FA6A24CC79C /* LoginView.swift */,
@@ -302,6 +305,7 @@
 				06364E7EEFED4D2F8758F54C /* DrawingViewModel.swift in Sources */,
 				CP003EMPLOYEE003CP003EMPLOY0 /* EMPLOYEE.swift in Sources */,
 				CP005EMPLOYEES005CP005EMPLOY /* EMPLOYEES_VIEW.swift in Sources */,
+				LD001ENHANCEDLEAD001LD001EN0 /* ENHANCED_LEAD_DETAIL_VIEW.swift in Sources */,
 				EQ001EQUIPMENT001EQ001EQUIPM /* EQUIPMENT.swift in Sources */,
 				EQ002EQUIPMENTVIEW002EQ002EQ /* EQUIPMENT_VIEW.swift in Sources */,
 				11111111111111INTERACTIVE11 /* InteractiveMapView.swift in Sources */,

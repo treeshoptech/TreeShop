@@ -190,7 +190,7 @@ struct MASTER_MENU: View {
             showingEmployees = true
         case .PROFILE:
             showingProfile = true
-        case .COMPANY_SETTINGS, .SETTINGS:
+        case .COMPANY_SETTINGS:
             showingCompany = true
         case .CUSTOMERS:
             showingCustomers = true
